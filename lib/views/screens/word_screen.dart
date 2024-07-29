@@ -139,13 +139,33 @@ class _WordScreenState extends State<WordScreen> {
                           ),
                         ),
                         SizedBox(
-                          height: 200,
-                          width: 350,
-                          child: Text(
-                            wordController
-                                .questions[wordController.curIndex.toInt()],
-                            style: const TextStyle(fontWeight: FontWeight.bold),
+                          height: 300,
+                          width: 300,
+                          child: Wrap(
+                            spacing: 10,
+                            runSpacing: 10,
+                            children: [
+                              for (var image in wordController.questionPics[
+                                  wordController.curIndex.toInt()])
+                                Container(
+                                  height: 145,
+                                  width: 145,
+                                  clipBehavior: Clip.hardEdge,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(
+                                      10,
+                                    ),
+                                  ),
+                                  child: Image.asset(
+                                    image,
+                                    fit: BoxFit.cover,
+                                  ),
+                                )
+                            ],
                           ),
+                        ),
+                        SizedBox(
+                          height: 20,
                         ),
                         Container(
                           height: 200,

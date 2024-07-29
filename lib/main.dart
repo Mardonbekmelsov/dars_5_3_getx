@@ -1,7 +1,7 @@
-import 'package:dars_5_3_getx/views/screens/card_screen.dart';
-import 'package:dars_5_3_getx/views/screens/word_screen.dart';
+import 'package:dars_5_3_getx/blocs/words_bloc/words_bloc.dart';
+import 'package:dars_5_3_getx/ui/screens/words_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main(List<String> args) {
   runApp(MyApp());
@@ -10,9 +10,12 @@ void main(List<String> args) {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      home: WordScreen(),
-      debugShowCheckedModeBanner: false,
+    return BlocProvider(
+      create: (context) => WordsBloc(),
+      child: MaterialApp(
+        home: WordsScreen(),
+        debugShowCheckedModeBanner: false,
+      ),
     );
   }
 }

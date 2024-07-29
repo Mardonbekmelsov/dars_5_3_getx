@@ -4,29 +4,37 @@ import 'package:get/get.dart';
 
 class WordController extends GetxController {
   RxList wordList = [
-    ['o', 'l', 'm', 'a'],
-    ['b', 'a', 'n', 'a', 'n'],
-    ['g', 'i', 'l', 'o', 's'],
-    ['x', 'u', 'r', 'm', 'o'],
-    ['q', 'a', 'r', 'a', 'g', 'a', 't'],
-    ['a', 'n', 'j', 'i', 'r'],
-    ['u', 'z', 'u', 'm'],
-    ['q', 'o', 'v', 'u', 'n'],
-    ['k', 'i', 'v', 'i'],
-    ['l', 'i', 'm', 'o', 'n']
+    ['f', 'i', 'r', 'e'],
+    ['t', 'r', 'e', 'e'],
+    ['w', 'a', 't', 'e', 'r'],
+    ['c', 'a', 'r'],
   ].obs;
 
-  RxList questions = [
-    "Qaysi meva har kuni yeyilsa shifokorni uzoqroqda saqlaydi?",
-    "Qaysi meva uzun, sariq va ko'pincha maymunlar bilan bog'liq bo'ladi?",
-    "Qaysi kichik, qizil meva ko'pincha desertlar va kokteyllar uchun ishlatiladi?",
-    "Palma daraxtida o'sadigan va ko'pincha quritilgan holda atiştirmalik sifatida yeyiladigan shirin meva nima?",
-    "Qaysi quyuq binafsha rangli berry ko'pincha siroplar va qo'shimchalar tarkibida bo'ladi va immunitetni kuchaytirish uchun ishlatiladi?",
-    "Qaysi kichik, shirin meva ichida mayda urug'lar bilan noyob tuzilishga ega va ko'pincha pechenye uchun ishlatiladi?",
-    "Qaysi meva klasterlarda bo'ladi, qizil, yashil yoki binafsha rangga ega bo'lib, vino tayyorlash uchun ishlatiladi?",
-    "Yashil go'shti bo'lgan qaysi qovun ko'pincha meva salatida beriladi?",
-    "Qaysi kichik, jigarrang, tukli meva yorqin yashil go'sht va mayda qora urug'larga ega?",
-    "Qaysi sariq tsitrus mevasi o'zining nordon ta'mi bilan mashhur bo'lib, ko'pincha limonad tayyorlash uchun ishlatiladi?"
+  RxList questionPics = [
+    [
+      "images/fire1.jpg",
+      "images/fire2.jpg",
+      "images/fire3.jpg",
+      "images/fire4.jpg",
+    ],
+    [
+      "images/tree1.jpg",
+      "images/tree2.jpg",
+      "images/tree3.jpg",
+      "images/tree4.jpg",
+    ],
+    [
+      "images/water1.jpg",
+      "images/water2.png",
+      "images/water3.jpg",
+      "images/water4.jpg",
+    ],
+    [
+      "images/car1.jpg",
+      "images/car2.jpg",
+      "images/car3.jpg",
+      "images/car4.jpg",
+    ],
   ].obs;
 
   RxList answer = [].obs;
@@ -42,7 +50,7 @@ class WordController extends GetxController {
       answer.add(" ");
     }
     letters = [...wordList[curIndex.toInt()]].obs;
-    for (var i = letters.length; i < 16; i++) {
+    for (var i = letters.length; i < 12; i++) {
       letters.add(String.fromCharCode(Random().nextInt(26) + 65).toLowerCase());
     }
     letters.shuffle();
