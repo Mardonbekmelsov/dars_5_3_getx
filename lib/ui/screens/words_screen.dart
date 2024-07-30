@@ -77,7 +77,7 @@ class _WordsScreenState extends State<WordsScreen> {
                   builder: (context, state) {
                     if (state is WordsLoadingState) {
                       return const Center(
-                        key: const ValueKey("Hello"),
+                        key:  ValueKey("Hello"),
                         child: CircularProgressIndicator(),
                       );
                     }

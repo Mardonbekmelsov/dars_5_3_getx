@@ -4,7 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   testWidgets("textfields and images", (widgetTester) async {
-    await widgetTester.pumpWidget(MyApp());
+    await widgetTester.pumpWidget(const MyApp());
 
     // await widgetTester.pumpAndSettle();
 

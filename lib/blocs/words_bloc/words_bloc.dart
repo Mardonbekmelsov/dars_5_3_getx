@@ -59,7 +59,6 @@ class WordsBloc extends Bloc<WordsEvent, WordsState> {
       }
 
       _checkWord();
-      print(checkWin);
       emit(WordsLoadedState(
           word: wordsList[curIndex], answer: answer, letters: letters));
     } catch (e) {
