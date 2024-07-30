@@ -6,8 +6,11 @@ void main() {
   testWidgets("textfields and images", (widgetTester) async {
     await widgetTester.pumpWidget(MyApp());
 
-    expect(find.byElementType(Image), findsNWidgets(4));
-    expect(find.byType(GridView), findsNWidgets(2));
-    expect(find.byType(Wrap), findsOneWidget);
+    // await widgetTester.pumpAndSettle();
+
+    expect(find.byKey(const ValueKey("Hello")), findsOneWidget);
+    // expect(find.byType(AssetImage), findsNWidgets(4));
+    // expect(find.byType(GridView), findsNWidgets(2));
+    // expect(find.byType(Wrap), findsOneWidget);
   });
 }

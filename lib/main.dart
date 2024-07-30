@@ -3,7 +3,7 @@ import 'package:dars_5_3_getx/ui/screens/words_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-void main(List<String> args) {
+void main() {
   runApp(MyApp());
 }
 
@@ -11,8 +11,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => WordsBloc(),
-      child: MaterialApp(
+      create: (context) => WordsBloc()..add(RoundStartEvent()),
+      child: const MaterialApp(
         home: WordsScreen(),
         debugShowCheckedModeBanner: false,
       ),
